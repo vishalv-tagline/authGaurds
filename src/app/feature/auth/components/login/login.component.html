@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="container-fluid ">
+    <div class="wrapper">
+        <div class="logo">
+            <img src="../../../../../assets/images/logo.jpeg" alt="">
+        </div>
+        <h2 class="h2 text-center mt-3 fw-bold">
+            Login
+        </h2>
+        <form class="p-3 mt-3 row" [formGroup]="frmLogin">
+            <div class="col-lg-12">
+                <label for="" class="form-label p-1">E-mail</label>
+                <input type="email" class="form-control form-control-lg" formControlName="email"
+                    placeholder="Enter email address">
+                <small class="text-danger p-2" *ngIf="
+                (frmControl['email'].touched &&
+                  frmControl['email'].pristine) ||
+                (isSubmited &&
+                  frmControl['email'].pristine &&
+                  frmControl['email'].invalid)
+              ">Enter valid email
+                    address</small>
+            </div>
+            <div class="col-lg-12 mt-2">
+                <label for="" class="form-label p-1">Password</label>
+                <input type="password" class="form-control form-control-lg" formControlName="password"
+                    placeholder="Password">
+                <small class="text-danger p-2" *ngIf="
+                (frmControl['password'].touched &&
+                  frmControl['password'].pristine) ||
+                (isSubmited &&
+                  frmControl['password'].pristine &&
+                  frmControl['password'].invalid)
+              ">Enter valid
+                    password</small>
+            </div>
+
+            <div>
+                <button type="button" class="btn mt-3" (click)="onLogin()">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

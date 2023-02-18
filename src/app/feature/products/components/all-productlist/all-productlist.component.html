@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <h1 class="h1 text-center mb-2 mt-2">Product List</h1>
+    <hr>
+    <div class="d-flex flex-wrap flex-row mx-5">
+        <div class="px-3 py-2" *ngFor="let product of productList.products;let i=index">
+            <div class="card h-100" style="width: 20rem;">
+                <img class="card-img-top p-4 h-75" [src]="product.images[0]" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="h4 extra">{{product.brand}}</h4>
+                    <h5 class="card-title">{{product.category}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="fw-bold">Price</span> : <span class="text-danger">
+                            &#8377;{{product.price}}</span></li>
+                    <li class="list-group-item"><span class="fw-bold">Discount</span> : <span class="text-danger">
+                            {{product.discountPercentage
+                            }}
+                            &#37;</span></li>
+                    <li class="list-group-item"><span class="fw-bold">Rating</span> : <span
+                            class="text-danger">{{product.rating}} &#37; </span></li>
+                </ul>
+                <a type="button" class="btn btn-md btn-primary w-2 p-2 m-2">
+                    Add Cart
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
