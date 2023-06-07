@@ -30,7 +30,6 @@ export class CommonGuard implements CanActivate, CanActivateChild, CanDeactivate
       return true;
     } else {
       alert("you don't have any admin rights");
-      this.router.navigate([''])
     }
     return false;
   }
@@ -44,11 +43,14 @@ export class CommonGuard implements CanActivate, CanActivateChild, CanDeactivate
     }
     return false;
   }
+
   canMatch(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
-  } canLoad(
+  }
+
+  canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 

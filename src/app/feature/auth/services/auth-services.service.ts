@@ -25,7 +25,7 @@ export class AuthServicesService {
 
   constructor() { }
 
-  checkLogin(data: { email: string, password: string }): Observable<any> {
+  public checkLogin(data: { email: string, password: string }): Observable<any> {
     return of(
       this.userData.find(
         (user: Userdata) => {
@@ -35,7 +35,7 @@ export class AuthServicesService {
     )
   }
 
-  isLogin() {
+  public isLogin() {
     return localStorage.getItem('email')
   }
 }
